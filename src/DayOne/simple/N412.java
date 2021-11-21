@@ -27,7 +27,11 @@ public class N412 {
     }
 
     public static void main(String[] args) {
-        N412 n412 = new N412();
-        System.out.println(n412.fizzBuzz(15));
+//        N412 n412 = new N412();
+//        System.out.println(n412.fizzBuzz(15));
+        int c =0;
+        if ( (++c) == 1){
+            System.out.println(11);
+        }
     }
 }
