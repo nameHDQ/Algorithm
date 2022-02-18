@@ -32,7 +32,6 @@ public class N673 {
                 ans += cnt[i];
             }
         }
-
         return ans;
     }
 
