@@ -24,7 +24,7 @@ public class N564 {
     }
     public List<Long> getCandidates(String n) {
         int len = n.length();
-        List<Long> candidates = new ArrayList<>(){
+        List<Long> candidates = new ArrayList<Long>(){
             {
                 add((long) Math.pow(10, len - 1) - 1);
                 add((long) Math.pow(10, len) +1);

@@ -37,13 +37,13 @@ public class N497 {
                 }
             }
             temp = r-1;
-            int start = random.nextInt(loc[temp][0], loc[temp][2] + 1);
-            int end = random.nextInt(loc[temp][1], loc[temp][3] + 1);
+            int start = random.nextInt();
+            int end = random.nextInt();
             return new int[]{start, end};
         }
     }
 
     public static void main(String[] args) {
-        System.out.println(new Random().nextInt(2,4));
+        System.out.println(new Random());
     }
 }

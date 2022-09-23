@@ -49,11 +49,12 @@ public class N698 {
 
         // 标注回溯
         for (int i = 0; i < buckets.length; i++) {
-            // 第一个随便放
+            // 第一个放任何一个桶都是等价的，所以只遍历一种可能就行
             if ( index == 0 && i > 0) return;
             if (buckets[i] + nums[index] > avg) {
                 continue;
             }
+            // 剪枝，当前和前一个桶相同，没必要便利了
             if (i > 0 && buckets[i] == buckets[i - 1]) continue;
             buckets[i] += nums[index];
             dfs(buckets, index + 1);

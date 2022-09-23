@@ -1,6 +1,5 @@
 package competition.spring2022;
 
-import com.sun.source.doctree.SummaryTree;
 
 import javax.print.attribute.standard.OrientationRequested;
 

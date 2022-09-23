@@ -6,8 +6,8 @@ package DayOne.medium;
  */
 public class N208 {
     class Trie {
-        private static int N = 100009;
-        private static int M = 26;
+        private static final int N = 100009;
+        private static final int M = 26;
         int[] count;
         int[][] next;
         int index;
