@@ -1,6 +1,7 @@
 package DayOne.simple;
 
 import java.util.Arrays;
+import java.util.stream.IntStream;
 
 /**
  * @author hdq
@@ -8,6 +9,7 @@ import java.util.Arrays;
  */
 public class N1005 {
     public int largestSumAfterKNegations(int[] nums, int k) {
+
         Arrays.sort(nums);
         long count = Arrays.stream(nums).filter((num) -> {
             return num < 0;
