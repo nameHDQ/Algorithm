@@ -47,8 +47,34 @@ public class N5 {
         return s.substring(start, start+maxLen);
     }
 
+    public String longestPalindrome1(String s) {
+        int len = s.length();
+        if (s.length() == 1) return s;
+        boolean[][] dp = new boolean[len + 1][len + 1];
+        int length = 1;
+        int start = 0;
+        for (int j = 1; j <= len; j++) {
+            for (int i = 1; i <= j; i++) {
+                if (s.charAt(i-1) == s.charAt(j - 1)){
+                    if (j - i <=2){
+                        dp[i][j] = true;
+                    }else {
+                        dp[i][j] = dp[i + 1][j - 1];
+                    }
+                }else {
+                    dp[i][j] = false;
+                }
+                if (dp[i][j] && j - i + 1 > length){
+                    start = i - 1;
+                    length = Math.max(length, j - i + 1);
+                }
+            }
+        }
+        return s.substring(start, start + length);
+    }
+
     public static void main(String[] args) {
         N5 n5 = new N5();
-        System.out.println(n5.longestPalindrome("babad"));
+        System.out.println(n5.longestPalindrome1("babad"));
     }
 }

@@ -33,4 +33,17 @@ public class N53 {
         }
         return res;
     }
+
+    public int maxSubArray1(int[] nums) {
+        int res = nums[0];
+
+        int[] dp = new int[nums.length];
+        int max = nums[0];
+        dp[0] = nums[0];
+        for (int i = 1; i < nums.length; i++) {
+            dp[i] = Math.max(nums[i], nums[i] + dp[i - 1]);
+            max = Math.max(max, dp[i]);
+        }
+        return max;
+    }
 }

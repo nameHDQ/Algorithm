@@ -65,5 +65,6 @@ public class UnionFind {
             parent[pRoot] = qRoot;
             rank[qRoot] += 1;   // 维护rank的值
         }
+
     }
 }

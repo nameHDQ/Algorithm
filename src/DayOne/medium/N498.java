@@ -1,5 +1,8 @@
 package DayOne.medium;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
+
 /**
  * @author hdq
  * @create 2022-06-14 9:53
@@ -35,5 +38,17 @@ public class N498 {
             }
         }
         return res;
+    }
+    public int[] findDiagonalOrder1(int[][] mat) {
+
+        int m = mat.length;
+        int n = mat[0].length;
+
+        Deque<int[]> deque = new ArrayDeque<>();
+
+
+        deque.push(new int[]{0,0});
+
+        return null;
     }
 }
