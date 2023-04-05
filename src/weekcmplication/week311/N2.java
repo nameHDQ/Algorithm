@@ -1,6 +1,6 @@
 package weekcmplication.week311;
 
-import javafx.scene.control.SpinnerValueFactory;
+
 
 public class N2 {
     public int longestContinuousSubstring(String s) {

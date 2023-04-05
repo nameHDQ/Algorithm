@@ -1,6 +1,5 @@
 package DayOne.hard;
 
-import javafx.util.Pair;
 
 import java.util.*;
 

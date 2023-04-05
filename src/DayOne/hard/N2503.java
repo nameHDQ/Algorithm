@@ -1,58 +1,55 @@
 package DayOne.hard;
 
-import javafx.util.Pair;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.stream.IntStream;
 
 public class N2503 {
 
     private static final int[][] dirs = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
     Map<Integer, Integer> parent = new HashMap<>();
     int[] size;
-    public int[] maxPoints(int[][] grid, int[] queries) {
-        int m = grid.length;
-        int n = grid[0].length;
-        int mn = m * n;
-        size = new int[mn];
-        int[][] outLines = new int[mn][3];
-        Arrays.fill(size, 1);
-        int len = queries.length;
-        Pair<Integer, Integer>[] pairs = new Pair[len];
-        for (int i = 0; i < len; i++) {
-            pairs[i] = new Pair<>(queries[i], i);
-        }
-        Arrays.sort(pairs, (a,b)->{
-            return a.getKey() - b.getKey();
-        });
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; j < n; j++) {
-                outLines[i * n + j] = new int[]{grid[i][j], i, j};
-                parent.put(i * n + j, i * n + j);
-            }
-        }
-        Arrays.sort(outLines, (a,b)->{return a[0] - b[0];});
-        int[] ans = new int[pairs.length];
-        int index = 0;
-        for (Pair<Integer, Integer> pair : pairs) {
-            int query = pair.getKey();
-            for (; index < mn && outLines[index][0] < query; index++) {
-                int x = outLines[index][1], y = outLines[index][2];
-                for (int[] dir : dirs) {
-                    int newX = x + dir[0], newY = y + dir[1];
-                    if (newX >= 0 && newX < m && newY >= 0 && newY < n && grid[newX][newY] < query) {
-                        union(x * n + y, newX * n + newY);
-                    }
-                }
-            }
-            if (grid[0][0] < query) {
-                ans[pair.getValue()] = size[find(0)];
-            }
-        }
-        return ans;
-    }
+//    public int[] maxPoints(int[][] grid, int[] queries) {
+//        int m = grid.length;
+//        int n = grid[0].length;
+//        int mn = m * n;
+//        size = new int[mn];
+//        int[][] outLines = new int[mn][3];
+//        Arrays.fill(size, 1);
+//        int len = queries.length;
+//        Pair<Integer, Integer>[] pairs = new Pair[len];
+//        for (int i = 0; i < len; i++) {
+//            pairs[i] = new Pair<>(queries[i], i);
+//        }
+//        Arrays.sort(pairs, (a,b)->{
+//            return a.getKey() - b.getKey();
+//        });
+//        for (int i = 0; i < m; i++) {
+//            for (int j = 0; j < n; j++) {
+//                outLines[i * n + j] = new int[]{grid[i][j], i, j};
+//                parent.put(i * n + j, i * n + j);
+//            }
+//        }
+//        Arrays.sort(outLines, (a,b)->{return a[0] - b[0];});
+//        int[] ans = new int[pairs.length];
+//        int index = 0;
+//        for (Pair<Integer, Integer> pair : pairs) {
+//            int query = pair.getKey();
+//            for (; index < mn && outLines[index][0] < query; index++) {
+//                int x = outLines[index][1], y = outLines[index][2];
+//                for (int[] dir : dirs) {
+//                    int newX = x + dir[0], newY = y + dir[1];
+//                    if (newX >= 0 && newX < m && newY >= 0 && newY < n && grid[newX][newY] < query) {
+//                        union(x * n + y, newX * n + newY);
+//                    }
+//                }
+//            }
+//            if (grid[0][0] < query) {
+//                ans[pair.getValue()] = size[find(0)];
+//            }
+//        }
+//        return ans;
+//    }
 
     public int find(int cur){
         if (cur != parent.get(cur)){
@@ -129,6 +126,6 @@ public class N2503 {
     public static void main(String[] args) {
         int[][] nums = {{1,2,3},{2,5,7},{3,5,1}};
         int[] que = {5,6,2};
-        new N2503().maxPoints(nums,que);
+//        new N2503().maxPoints(nums,que);
     }
 }

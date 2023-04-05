@@ -1,10 +1,7 @@
 package DayOne.simple;
 
-import com.sun.xml.internal.bind.v2.model.runtime.RuntimeEnumLeafInfo;
 
 import java.util.Arrays;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
 
 public class N349 {
     public int[] intersection(int[] nums1, int[] nums2) {

@@ -1,6 +1,5 @@
 package competition.fall2022;
 
-import javafx.util.Pair;
 
 import java.util.*;
 

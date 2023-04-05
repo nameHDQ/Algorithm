@@ -1,6 +1,5 @@
 package DayOne.medium;
 
-import javafx.scene.control.SpinnerValueFactory;
 
 import java.util.ArrayList;
 import java.util.List;

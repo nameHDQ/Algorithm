@@ -1,9 +1,5 @@
 package DayOne.simple;
 
-import jdk.nashorn.internal.ir.IfNode;
-
-import java.util.HashMap;
-import java.util.Map;
 
 public class N1790 {
     public boolean areAlmostEqual(String s1, String s2) {
